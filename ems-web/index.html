@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+
+    <!-- ✅ PLACE THIS NORMALIZER IN HEAD, ABOVE ANY OTHER SCRIPTS -->
+    <script>
+      (function () {
+        var href = window.location.href;
+        if (href.indexOf('&amp;') !== -1) {
+          var fixed = href.replace(/&amp;/g, '&');
+          // Replace the visible URL (no reload) so Amplify sees a valid query string.
+          window.history.replaceState(null, document.title, fixed);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <script>
+      window.global = window;
+      window.process = { env: { DEBUG: undefined } };
+      var exports = {};
+    </script>
+
+    <div id="app"></div>
+    <!-- keep this after the normalizer -->
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
