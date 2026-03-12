@@ -1,0 +1,1 @@
+genhtml coverage/history.info -o coverage/history

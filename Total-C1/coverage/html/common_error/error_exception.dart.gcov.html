@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - lcov.info - common_error/error_exception.dart</title>
+  <link rel="stylesheet" type="text/css" href="../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">LCOV - code coverage report</td></tr>
+            <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../index.html" title="Click to go to top-level">top level</a> - <a href="index.html" title="Click to go to directory common_error">common_error</a> - error_exception.dart</td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only">Hit</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">lcov.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
+            <td class="headerCovTableEntry">7</td>
+            <td class="headerCovTableEntry">7</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test Date:</td>
+            <td class="headerValue">2026-03-12 16:15:33</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryHi">-</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">0</td>
+          </tr>
+                  <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">            Line data    Source code</pre>
+<pre class="source">
+<span id="L1"><span class="lineNum">       1</span>              : class ApiException implements Exception {</span>
+<span id="L2"><span class="lineNum">       2</span>              :   final String code;</span>
+<span id="L3"><span class="lineNum">       3</span>              :   final String? message;</span>
+<span id="L4"><span class="lineNum">       4</span> <span class="tlaGNC">           7 :   ApiException(this.code, [this.message]);</span></span>
+<span id="L5"><span class="lineNum">       5</span> <span class="tlaGNC">           4 :   @override</span></span>
+<span id="L6"><span class="lineNum">       6</span>              :   String toString() {</span>
+<span id="L7"><span class="lineNum">       7</span> <span class="tlaGNC">          12 :     return 'ApiException: $code - $message';</span></span>
+<span id="L8"><span class="lineNum">       8</span>              :   }</span>
+<span id="L9"><span class="lineNum">       9</span>              : }</span>
+<span id="L10"><span class="lineNum">      10</span>              : </span>
+<span id="L11"><span class="lineNum">      11</span> <span class="tlaGNC">           3 : String getErrorMessageFromCode(String code, {List&lt;String&gt;? params}) {</span></span>
+<span id="L12"><span class="lineNum">      12</span>              :   const Map&lt;String, String&gt; _errorMessages = {</span>
+<span id="L13"><span class="lineNum">      13</span>              :     'E0031': '施設IDは6桁で入力してください。 ',</span>
+<span id="L14"><span class="lineNum">      14</span>              :     'MSG0018': '施設発電情報の取得に成功しました。',</span>
+<span id="L15"><span class="lineNum">      15</span>              :     'E0011': 'システムエラーが発生しました。\n 管理者にお問い合わせください。',</span>
+<span id="L16"><span class="lineNum">      16</span>              :     'E0012': '入力された「{0}」の値が「{1}」の場合、「{2}」は必須入力項目です。',</span>
+<span id="L17"><span class="lineNum">      17</span>              :     'E0034': '指定された施設IDが見つかりません。',</span>
+<span id="L18"><span class="lineNum">      18</span>              :     'E0038': 'ネットワークエラーが発生しました。\n インターネット接続を確認してください。',</span>
+<span id="L19"><span class="lineNum">      19</span>              :     'E0039': 'タイムアウトエラーが発生しました。',</span>
+<span id="L20"><span class="lineNum">      20</span>              :     'E0048': '該当するデータが存在しません。',</span>
+<span id="L21"><span class="lineNum">      21</span>              :     'E0047': '入力された施設IDの形式が正しくありません。',</span>
+<span id="L22"><span class="lineNum">      22</span>              :     // 'E0050': '本施設は非運用になっており、\n 電力量データが確認できません。',</span>
+<span id="L23"><span class="lineNum">      23</span>              :     'E0050': '本施設メンテナンスになっており、\n 電力量データが確認できません。',</span>
+<span id="L24"><span class="lineNum">      24</span>              :     'E00050': '本施設非運用になっており、\n 電力量データが確認できません。',</span>
+<span id="L25"><span class="lineNum">      25</span>              :   };</span>
+<span id="L26"><span class="lineNum">      26</span> <span class="tlaGNC">           3 :   String message = _errorMessages[code] ?? 'システムエラーが発生しました。\n 管理者にお問い合わせください。';</span></span>
+<span id="L27"><span class="lineNum">      27</span>              :   if (params != null) {</span>
+<span id="L28"><span class="lineNum">      28</span> <span class="tlaGNC">           3 :     for (int i = 0; i &lt; params.length; i++) {</span></span>
+<span id="L29"><span class="lineNum">      29</span> <span class="tlaGNC">           3 :       message = message.replaceAll('{$i}', params[i]);</span></span>
+<span id="L30"><span class="lineNum">      30</span>              :     }</span>
+<span id="L31"><span class="lineNum">      31</span>              :   }</span>
+<span id="L32"><span class="lineNum">      32</span>              :   return message;</span>
+<span id="L33"><span class="lineNum">      33</span>              : }</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.4-0</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>

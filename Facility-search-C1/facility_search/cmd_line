@@ -1,0 +1,1 @@
+genhtml coverage/facility_search.info -o coverage/facility_search

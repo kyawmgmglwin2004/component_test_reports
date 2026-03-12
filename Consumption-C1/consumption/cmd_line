@@ -1,0 +1,1 @@
+genhtml coverage/consumption.info -o coverage/consumption
